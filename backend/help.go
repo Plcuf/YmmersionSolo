@@ -7,9 +7,9 @@ import (
 )
 
 // Fonction pour modifié le JSON
-func EditJSON(ModifiedArticle []Character) {
+func EditJSON(ModifiedChar []Character) {
 
-	modifiedJSON, errMarshal := json.Marshal(ModifiedArticle)
+	modifiedJSON, errMarshal := json.Marshal(ModifiedChar)
 	if errMarshal != nil {
 		fmt.Println("Error encodage ", errMarshal.Error())
 		return
@@ -34,7 +34,7 @@ func ReadJSON() ([]Character, error) {
 }
 
 // Fonction pour savoir si l'id existe déjà
-func IdAlreadyExists(nb int) bool {
+func IdAlreadyExists(nb string) bool {
 	for i := 0; i < len(ListeCharacter); i++ {
 		if ListeCharacter[i].Id == nb {
 			return true
@@ -44,9 +44,9 @@ func IdAlreadyExists(nb int) bool {
 }
 
 // Fonction pour générer un Id disponible
-func GenerateID() int {
-	if !IdAlreadyExists(len(ListeCharacter) + 1) {
-		return len(ListeCharacter) + 1
+func GenerateID() string {
+	if !IdAlreadyExists(string(len(ListeCharacter) + 1)) {
+		return string(len(ListeCharacter) + 1)
 	} else {
 		t := LstIDSuppr[0]
 		if len(LstIDSuppr) > 1 {
@@ -54,6 +54,6 @@ func GenerateID() int {
 		} else {
 			LstIDSuppr = []int{}
 		}
-		return t
+		return string(t)
 	}
 }

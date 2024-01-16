@@ -2,7 +2,7 @@ package backend
 
 type Character struct {
 	Name        string `json:"name"`
-	Id          int    `json:"id"`
+	Id          string `json:"id"`
 	Description string `json:"description"`
 	Age         string `json:"age"`
 	Genre       string `json:"genre"`

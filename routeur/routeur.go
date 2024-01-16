@@ -20,7 +20,7 @@ func InitServe() {
 	http.Handle("/static/", http.StripPrefix("/static/", fileserver))
 
 	//Le lien d'ou est lancé le serveur
-	fmt.Println("(http://localhost:8080/index) - Server started on port:8080")
-	http.ListenAndServe("localhost:8080", nil)
+	fmt.Println("(http://localhost:8081/index) - Server started on port:8081")
+	http.ListenAndServe("localhost:8081", nil)
 	fmt.Println("Server closed")
 }
