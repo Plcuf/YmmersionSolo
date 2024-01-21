@@ -1,0 +1,139 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    font-family: sanchez;
+
+}
+
+@font-face {
+    font-family: sanchez;
+    src: url(../fonts/Sanchez-Regular.ttf);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #7481aa;
+    color: white;
+}
+
+.create {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+    height: 25px;
+    background-color: #8674aa;
+    border: 3px solid #FFF;
+    border-radius: 25px;
+    color: white;
+    transition: .5s;
+}
+
+.create:hover {
+    filter: invert(1);
+    background-color: green;
+}
+
+.characters {
+    margin: 30px;
+    padding: 20px;
+    width: 80vw;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #cda5f3;
+    border: 3px solid #FFF;
+    border-radius: 25px;
+}
+
+.character {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 3px solid;
+    width: 275px;
+    height: 350px;
+    padding: 10px;
+    background-color: #dba5f3;
+    border: 3px solid #FFF;
+}
+
+.everything {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.top {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: start;
+}
+
+.img {
+    background: url("../img/icon_66.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+}
+
+.stats {
+    padding: 3%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: start;
+    align-items: start;
+}
+
+.nameage {
+    width: 125px;
+    overflow: auto;
+    margin-bottom: 10px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+}
+
+.nameage>p:nth-child(1) {
+    margin-right: 20px;
+}
+
+.stats>div:nth-child(2) {
+    margin-bottom: 10px;
+}
+
+.desc {
+    max-width: 240px;
+    margin-top: 10px;
+    overflow: auto;
+}
+
+.admin {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.admin>a {
+    padding: 10px;
+    background-color:#7481aa;
+    color: white;
+    border: 3px solid #7481aa;
+    transition: .5s;
+}
+
+.admin>a:hover {
+    background-color:#b0b9d4;
+    border-color: #969eb5;
+    border-radius: 10px 0;
+}

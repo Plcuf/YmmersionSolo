@@ -1,10 +1,1 @@
-[
-    {
-        "name": "Kheir",
-        "id": "1",
-        "description": "Il est trop beau woula",
-        "age": "23",
-        "genre": "helicopitere",
-        "image": "helicoptere.png"
-    }
-]
+[{"Name":"Kheir","id":"0001","description":"scs","Age":"0","race":"Elfe","classe":"Combattant"},{"Name":"","id":"\u0004","description":"","Age":"34","race":"Elfe","classe":"Combattant"}]

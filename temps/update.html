@@ -1,0 +1,105 @@
+{{define "update"}}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title> index </title>
+        <link rel="stylesheet" href="../static/style/creation.css">
+    </head>
+    <body>
+        <form action="/update/treatment?Id={{.Id}}" method="POST">
+            <div class="whole">
+                <div class="topsection">
+                    <div class="character">
+                        <div class="racetop">
+                            <div class="race">
+                                <input type="radio" id="Elfe" name="race" value="Elfe" checked />
+                                <label for="Elfe"> Elfe </label>
+                            </div>
+                            <div class="race">
+                                <input type="radio" id="Nain" name="race" value="Nain"/>
+                                <label for="Nain" class="offsetdown"> Nain</label>
+                            </div>
+                        </div>
+                        <div class="icon"></div>
+                        <div class="racebottom">
+                            <div class="race">
+                                <input type="radio" id="Humain" name="race" value="Humain" />
+                                <label for="Humain"> Humain </label>
+                            </div>
+                            <div class="race" >
+                                <input type="radio" id="Demon" name="race" value="Demon"/>
+                                <label for="Demon" class="offsetdown"> Demon </label>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stats">
+                        <div class="nameage">
+                            <h3> Main Stats :</h3>
+                            <input type="text" id="Name" name="Name" value="{{.Name}}" placeholder="Name">
+                            <input type="Number" id="Age" name="Age" value="{{.Age}}" placeholder="Age" class="age">
+                        </div>
+                        <div class="classe">
+                            <div class="classetop">
+                                <div>
+                                    <input type="radio" id="Combattant" name="classe" value="Combattant" checked />
+                                    <label for="Combattant"> Combattant </label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="Mage" name="classe" value="Mage" />
+                                    <label for="Mage"> Mage</label>
+                                </div>
+                            </div>
+                            <div class="classebottom">
+                                <div>
+                                    <input type="radio" id="Soutien" name="classe" value="Soutien" />
+                                    <label for="Soutien"> Soutien </label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="Stratège" name="classe" value="Stratège" />
+                                    <label for="Stratège"> Stratège </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottomsection">
+                    <div class="bars">
+                        <div class="bar">
+                            <div class="pv"></div>
+                            <div>PV</div>
+                        </div>
+                        <div class="bar">
+                            <div class="atk"></div>
+                            <div>ATK</div>
+                        </div>
+                        <div class="bar">
+                            <div class="def"></div>
+                            <div>DEF</div>
+                        </div>
+                        <div class="bar">
+                            <div class="spd"></div>
+                            <div>SPD</div>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <textarea name="description" rows="6" value="{{.Description}}"></textarea>
+                    </div>
+                    <div class="create">
+                        <button class="btn" type="submit">
+                            <svg viewBox="0 0 180 60" class="border">
+                                <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+                                <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+                            </svg>
+                            <span> Créer </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>
+{{end}}

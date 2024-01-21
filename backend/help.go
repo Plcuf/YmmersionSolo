@@ -6,22 +6,6 @@ import (
 	"os"
 )
 
-// Fonction pour modifié le JSON
-func EditJSON(ModifiedChar []Character) {
-
-	modifiedJSON, errMarshal := json.Marshal(ModifiedChar)
-	if errMarshal != nil {
-		fmt.Println("Error encodage ", errMarshal.Error())
-		return
-	}
-	// Écrire le JSON modifié dans le fichier
-	err := os.WriteFile("JSON/bdd.json", modifiedJSON, 0644)
-	if err != nil {
-		fmt.Println("Erreur lors de l'écriture du fichier JSON modifié:", err)
-		return
-	}
-}
-
 // Fonction pour mettre le JSON dans une struct
 func ReadJSON() ([]Character, error) {
 	jsonFile, err := os.ReadFile("JSON/bdd.json")
@@ -55,5 +39,38 @@ func GenerateID() string {
 			LstIDSuppr = []int{}
 		}
 		return string(t)
+	}
+}
+
+func GetCharById(Id string) {
+	filepath := "JSON/bdd.json"
+	contenu, err := os.ReadFile(filepath)
+	if err != nil {
+		fmt.Println("pas cool : ", err)
+	}
+	var Personnage []Character
+	err = json.Unmarshal(contenu, &Personnage)
+	if err != nil {
+		fmt.Println("pas cool : ", err)
+	}
+	var index = -1
+	for i, char := range Personnage {
+		fmt.Println(char.Id, Id, i)
+		if char.Id == Id {
+			index = i
+			break
+		}
+	}
+	if index == -1 {
+		fmt.Println("pa cool :(")
+	}
+	Personnage = append(Personnage[:index], Personnage[index+1:]...)
+	updatedData, err := json.Marshal(Personnage)
+	if err != nil {
+		fmt.Println("pas cool : ", err)
+	}
+	err = os.WriteFile("JSON/bdd.json", updatedData, 0644)
+	if err != nil {
+		fmt.Println("pas cool : ", err)
 	}
 }

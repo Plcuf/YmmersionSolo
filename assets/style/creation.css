@@ -49,8 +49,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-size: cover;
-    background: center no-repeat url(../img/icon_66.png);
+    background: center/50% no-repeat url(../img/icon_66.png);
 }
 
 .race>label {
@@ -61,13 +60,15 @@ body {
     color: white;
     display: block;
     border: 3px solid #7481aa;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
+    margin: 2vh;
     transition: .5s;
 }
 
 .race>input:checked ~ label {
     color: #000;
+    background-color:#b0b9d4;
+    border-color: #969eb5;
+    border-radius: 10px 0;
 }
 
 .race>label.offsetdown {
@@ -101,28 +102,82 @@ body {
     justify-content: space-between;
 }
 
+.nameage>h3 {
+    margin-left: 2vw;
+}
+
+.nameage>input {
+    margin-left: 5vw
+}
+
+.nameage>input.age {
+    width: 5vw;
+}
+
 .stats input[type="radio"]{
     display: none;
 }
 
 .classe {
-    height: 15vh;
+    height: 20vh;
+    width: 50vw;
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+
 }
 
 .classetop {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
+}
+
+.classebottom>div>label {
+    display: block;
+    text-align: center;
+    background-color: #7481aa;
+    border: 3px solid #7481aa;
+    color: #FFF;
+    margin: 1vh;
+    padding: 3vh;
+    width: 15vw;
+    transition: .5s;
+}
+
+.classetop>div>label {
+    display: block;
+    text-align: center;
+    background-color: #7481aa;
+    border: 3px solid #7481aa;
+    color: #FFF;
+    margin: 1vh;
+    padding: 3vh;
+    width: 15vw;
+    transition: .5s;
+
+}
+
+.classetop>div>input:checked ~ label {
+    color: #000;
+    background-color:#b0b9d4;
+    border-color: #969eb5;
+    border-radius: 0 15px;
+}
+
+.classebottom>div>input:checked ~ label {
+    color: #000;
+    background-color:#b0b9d4;
+    border-color: #969eb5;
+    border-radius: 0 15px;
 }
 
 .classebottom {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    margin-bottom: 10vh;
 }
 
 .bottomsection {
@@ -133,50 +188,99 @@ body {
 
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
+.bars {
+    padding: 20px;
+    margin-left: 1vw;
 
-@keyframes corner {
-    0% {
-        border-top-left-radius: 1% 50%;
-    }
-    12.5% {
-        border-top-left-radius: 50%;
-        border-top-right-radius: 50%;
-    }
-    25% {
-        border-top-right-radius: 1% 50%;
-    }
-    25.001% {
-        border-top-right-radius: 50% 1%;
-    }
-    37.5% {
-        border-top-right-radius: 50%;
-        border-bottom-right-radius: 50%;
-    }
-    50% {
-        border-bottom-right-radius: 50% 1%;
-    }
-    50.001% {
-        border-bottom-right-radius: 1% 50%;
-    }
-    62.5% {
-        border-bottom-right-radius: 50%;
-        border-bottom-left-radius: 50%;
-    }
-    75% {
-        border-bottom-left-radius: 1% 50%;
-    }
-    75.001% {
-        border-bottom-left-radius: 50% 1%;
-    }
-    87.5% {
-        border-bottom-left-radius: 50%;
-        border-top-left-radius: 50%;
-    }
-    100% {
-        border-top-left-radius: 50% 1%;
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+    font-size: 15px;
+}
+
+.bar{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.bar .pv {
+    background-color: rgb(63, 178, 43);
+    height: 1vh;
+    width: 100px;
+}
+
+.bar .atk {
+    background-color: red;
+    height: 1vh;
+    width: 100px;
+}
+
+.bar .def {
+    background-color: rgb(130, 87, 210);
+    height: 1vh;
+    width: 100px;
+}
+
+.bar .spd {
+    background-color: rgb(226, 229, 46);
+    height: 1vh;
+    width: 100px;
+}
+
+.description>textarea    {
+    width: 30vw;
+    height: 20vh;
+}
+
+.create{
+    position: relative;
+    margin-left: 3vw;
+}
+
+.center {
+    width: 180px;
+    height: 60px;
+    position: absolute;
+}
+
+.btn {
+    width: 180px;
+    height: 60px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid #91C9FF;
+    outline: none;
+    transition: 1s ease-in-out;
+}
+
+svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    fill: none;
+    stroke: #fff;
+    stroke-dasharray: 150 480;
+    stroke-dashoffset: 150;
+    transition: 1s ease-in-out;
+}
+
+.btn:hover {
+    transition: 1s ease-in-out;
+    background: #4F95DA;
+}
+
+.btn:hover svg {
+    stroke-dashoffset: -480;
+}
+
+.btn span {
+    color: white;
+    font-size: 18px;
+    font-weight: 100;
 }
